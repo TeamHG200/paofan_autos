@@ -1,0 +1,8 @@
+{
+    "name" : "王将臣",
+    "author" : "captain",
+    "desc" : "在指定时间给自己发送一条提醒",
+    "icon" : "icon.png",
+    "script" : "wangjiangchen.main",
+    "script_path" : "main.lua"
+}

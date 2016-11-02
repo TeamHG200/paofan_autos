@@ -1,0 +1,8 @@
+{
+    "name" : "晚安侠",
+    "author" : "captain",
+    "desc" : "说晚安时会收到别人的晚安回复",
+    "icon" : "icon.png",
+    "script" : "banlv.main",
+    "script_path" : "main.lua"
+}

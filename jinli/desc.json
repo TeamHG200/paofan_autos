@@ -1,0 +1,8 @@
+{
+    "name" : "锦鲤",
+    "author" : "captain",
+    "desc" : "你知道这预示着什么",
+    "icon" : "icon.png",
+    "script" : "jinli.main",
+    "script_path" : "main.lua"
+}

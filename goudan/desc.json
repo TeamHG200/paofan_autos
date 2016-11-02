@@ -1,0 +1,8 @@
+{
+    "name" : "狗蛋",
+    "author" : "captain",
+    "desc" : "用户有新消息时发送一个提醒",
+    "icon" : "icon.png",
+    "script" : "goudan.main",
+    "script_path" : "main.lua"
+}

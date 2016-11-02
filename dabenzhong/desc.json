@@ -1,0 +1,8 @@
+{
+    "name" : "大本钟",
+    "author" : "captain",
+    "desc" : "让自己也成为大本钟",
+    "icon" : "icon.png",
+    "script" : "dabenzhong.main",
+    "script_path" : "main.lua"
+}

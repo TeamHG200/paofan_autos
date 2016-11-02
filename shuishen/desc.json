@@ -1,0 +1,8 @@
+{
+    "name" : "若水贩卖机",
+    "author" : "captain",
+    "desc" : "每小时推送一条水神语录",
+    "icon" : "icon.png",
+    "script" : "shuishen.main",
+    "script_path" : "main.lua"
+}
