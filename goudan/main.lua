@@ -1,21 +1,20 @@
--- 从上一次的消息开始，获取用户的新消息
+-- get user new message since last message
 local t = ff:timeline({
-        user_id = args["target_user"],  -- 关注用户的id
-        since_id = args["since_id"]     -- 关注用户上次的最新消息
+        user_id = args["target_user"], 
+        since_id = args["since_id"]
         })
 
--- 把JSON消息转化为TABLE结构
 local tl = json.decode(t)
 
--- 如果用户有新消息，则返回结果大于0
+-- if user has new message
 if #tl > 0 then
     
-    -- 给自己发送一个推送通知
+    -- send a push to self
     db:apns({
             user_id = args["user_id"], 
-            content = "狗蛋蹭了蹭你，并对你说有新消息啦！"
+            content = "�������˲��㣬������˵������Ϣ����"
             })
 
-    -- 同时记录下关注的用户最新的一条消息id
+    -- save the new message 
     args["since_id"] = tl[1]["id"]
 end

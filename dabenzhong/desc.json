@@ -4,5 +4,9 @@
     "desc" : "让自己也成为大笨钟",
     "icon" : "icon.png",
     "script" : "dabenzhong.main",
-    "script_path" : "main.lua"
+    "script_path" : "main.lua",
+    "script_id" : "2",
+    "auto" : "dabenzhong",
+    "args" : [],
+    "story" : ""
 }

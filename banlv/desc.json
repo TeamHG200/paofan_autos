@@ -4,5 +4,9 @@
     "desc" : "对说晚安的人回复晚安",
     "icon" : "icon.png",
     "script" : "banlv.main",
-    "script_path" : "main.lua"
+    "script_path" : "main.lua",
+    "script_id" : "3",
+    "auto" : "banlv",
+    "args" : [],
+    "story" : ""
 }

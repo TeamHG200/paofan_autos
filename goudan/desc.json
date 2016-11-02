@@ -1,8 +1,12 @@
 {
     "name" : "狗蛋",
+    "auto" : "goudan",
     "author" : "captain",
     "desc" : "用户有新消息时发送一个提醒",
     "icon" : "icon.png",
     "script" : "goudan.main",
-    "script_path" : "main.lua"
+    "script_id" : "1",
+    "script_path" : "main.lua",
+    "args" : ["target_user:用户"], 
+    "story" : "仅以此纪念若水16年10月份领养的小猫'狗蛋'"
 }

@@ -4,5 +4,9 @@
     "desc" : "可以定时发送消息",
     "icon" : "icon.png",
     "script" : "wali.main",
-    "script_path" : "main.lua"
+    "script_path" : "main.lua",
+    "script_id" : "4",
+    "auto" : "wali",
+    "args" : ["status:消息", "expire_time:时间"], 
+    "story" : ""
 }
