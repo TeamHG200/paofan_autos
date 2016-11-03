@@ -8,5 +8,5 @@
     "script_id" : "4",
     "auto" : "wali",
     "args" : ["status:消息", "expire_time:时间"], 
-    "story" : ""
+    "story" : "status是消息主体,expire_time为xx秒后发送"
 }

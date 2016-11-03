@@ -12,7 +12,7 @@ if #tl > 0 then
     -- send a push to self
     db:apns({
             user_id = args["user_id"], 
-            content = "¹·µ°²äÁË²äÄã£¬²¢¶ÔÄãËµÓĞĞÂÏûÏ¢À²£¡"
+            content = "ç‹—è›‹è¯´:" .. tl[1]["text"]
             })
 
     -- save the new message 

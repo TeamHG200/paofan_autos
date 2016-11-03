@@ -1,13 +1,17 @@
 local time = os.time()
-local commit_time = args["commit_time"]
-local expire_time = args["expire_time"]
+local expire_time = tonumber(args["expire_time"])
 local status = args["status"]
-if time > commit_time + expire_time then
+if expire_time > 0 then
+
+    expire_time = expire_time - 30
+    args["expire_time"] = tostring(expire_time)
+
+elseif expire_time > -100 then
 
     ff:post({
         status = args["status"]
     })
 
-    args["commit_time"] = time
+    args["expire_time"] = tostring(-1000)
 
 end
