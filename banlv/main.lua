@@ -8,7 +8,8 @@ if #tl > 0 then
 
     for i=1,#tl do
         local status = tl[1]    
-        if status["text"] == "晚安" then
+        if status["text"] == "晚安" 
+        and status["user"]["id"] ~= args["user_id"] then
             ff:post({
                 status = "@"..status["user"]["name"].." 晚安",
                 reply_id = status["id"]

@@ -7,6 +7,6 @@
     "script_path" : "main.lua",
     "script_id" : "4",
     "auto" : "wali",
-    "args" : ["status:消息", "expire_time:时间"], 
-    "story" : "status是消息主体,expire_time为xx秒后发送"
+    "args" : ["status:消息", "expire_time:时间", "loop_count:次数"], 
+    "story" : "status是发送消息 \r expire_time为xx秒后发送 \r loop_count为需要重复的次数 \r 每次发送完loop_count会减少 \r 当变为0时会自动关闭"
 }
