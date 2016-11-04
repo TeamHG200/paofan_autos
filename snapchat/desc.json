@@ -1,0 +1,12 @@
+{
+    "name" : "白茫茫",
+    "author" : "captain",
+    "desc" : "带上snap标记的消息会自动删除",
+    "icon" : "icon.png",
+    "script" : "snapchat.main",
+    "script_path" : "main.lua",
+    "script_id" : "5",
+    "auto" : "snapchat",
+    "args" : [], 
+    "story" : "你可以在发送消息时带上#snap#的tag\r这个消息在10分钟会被删除\r同时你将收到一条推送提醒"
+}
