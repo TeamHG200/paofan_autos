@@ -1,0 +1,12 @@
+{
+    "name" : "蠢蛋",
+    "author" : "captain",
+    "desc" : "一款两人对战的五子棋游戏",
+    "icon" : "icon.png",
+    "script" : "renju.main",
+    "script_path" : "main.lua",
+    "script_id" : "6",
+    "auto" : "renju",
+    "args" : ["target_user:用户"], 
+    "story" : "输入你想挑战的用户ID，开始一场五子棋大战吧 \r 开启泡饭机器人的用户会主动@另一个用户开启对战 \r 用户之间只需互相回复坐标(xy)即可下棋 \r 机器人用户主页会刷新对战棋盘 "
+}
