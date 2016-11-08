@@ -23,8 +23,8 @@ local gm = GM()
 
 function split_str(str, token)
     local list = {}
-    if str == nil then 
-        return list 
+    if str == nil then
+        return list
     end
     local pattern = string.format('[^%s]+', token)
     for value in string.gmatch(str, pattern) do
@@ -79,6 +79,7 @@ if pending_user then
     if #tl > 0 then
         local is_post = false
         for i=1,#tl do
+            print(tl[i]["in_reply_to_status_id"])
             if tl[i]["in_reply_to_status_id"] == last_msg then
                 local pos1,pos2 = string.find(tl[i]["text"],"%d+")
                 if pos1 and pos2 and not is_post then
@@ -104,38 +105,25 @@ else
     table.insert(step, "B55")
     gm:drawRenju(file, step)
     args["step"] = table.concat(step, ",")
-    if target_user == "AI" then
-        local t = ff:post({
-            status = "#renju# 来吧，让我们大干一场！ @AI",
-            photo = file
-        })
+    local r = ff:timeline({
+        user_id = target_user
+    })
+    local res = json.decode(r)
+    local name = res[1]["user"]["name"]
 
-        local tl = json.decode(t)
-        args["last_msg"] = tl["id"]
-        args["pending_user"] = target_user
-        args["target_name"] = "sillychis" 
+    local t = ff:post({
+        status = "#renju# 来吧，让我们大干一场！ @"..name,
+        photo = file
+    })
 
-    else
-        local r = ff:timeline({
-            user_id = target_user
-        })
-        local res = json.decode(r)
-        local name = res[1]["user"]["name"]
-
-        local t = ff:post({
-            status = "#renju# 来吧，让我们大干一场！ @"..name,
-            photo = file
-        })
-
-        local tl = json.decode(t)
-        args["last_msg"] = tl["id"]
-        args["pending_user"] = target_user
-        args["target_name"] = name 
-        db:apns({
-            user_id = target_user,
-            content = user_id .. "邀请你来一场五子棋大战！"
-        })
-    end
+    local tl = json.decode(t)
+    args["last_msg"] = tl["id"]
+    args["pending_user"] = target_user
+    args["target_name"] = name 
+    db:apns({
+        user_id = target_user,
+        content = user_id .. "邀请你来一场五子棋大战！"
+    })
 end
 
 end
