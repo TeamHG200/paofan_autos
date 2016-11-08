@@ -4,7 +4,12 @@ local seg = {
     "呀嘞嘞，有两下子嘛",
     "愚蠢的法师，小心玩火自焚",
     "若水都比你下得好！",
-    "你这样等于自寻死路",
+    "你这是自寻死路",
+    "刚真，你只有这么厉害喔- -|",
+    "此处应有掌声",
+    "惊叹吧凡人，这一步已耗尽你的CPU",
+    "哼，真是愚蠢",
+    "厉害！我差点就惊叹了",
     "呵呵，打得不错",
     "将军！啊不，连珠！"
 }
@@ -95,8 +100,8 @@ if pending_user then
                     else
                       local text = ((pending_user == user_id) and "B" or "W") ..s                
                       table.insert(step, text)
+                      teardown(tl[i])
                     end
-                    teardown(tl[i])
                 end
             end
         end
