@@ -3,7 +3,7 @@
     "author" : "captain",
     "desc" : "一款两人对战的五子棋游戏",
     "icon" : "icon.png",
-    "script" : "sillychis.main",
+    "script" : "sillichis.main",
     "script_path" : "main.lua",
     "script_id" : "A",
     "auto" : "sillychis",

@@ -51,7 +51,7 @@ function teardown(tl)
      local r = {}
      if winner == "" then
        r = ff:post({
-           status = "#renju# 正在与@"..target_name.." 对战 "..seg[(#step)%(#seg)+1].."("..all_step..")",
+           status = "#renju# 正在与@"..target_name.." 对战 "..seg[(#step)%(#seg)+1].." "..all_step,
            photo = file
        })
      else
@@ -98,7 +98,7 @@ if pending_user then
                          status = "#renju# 走错了，该子已存在或落子在棋盘外"
                       })
                     else
-                      local text = ((pending_user == user_id) and "B" or "W") ..s                
+                      local text = ((#step %2 == 0) and "B" or "W") ..s                
                       table.insert(step, text)
                       teardown(tl[i])
                     end

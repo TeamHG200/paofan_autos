@@ -1,29 +1,54 @@
-local time = os.time()
-if args["origin_expire_time"] == nil then
-    args["origin_expire_time"] = args["expire_time"]
+function split_str(str, token)
+    local list = {}
+    if str == nil or str == "" then
+        return {""}
+    end
+    local pattern = string.format('[^%s]+', token)
+    for value in string.gmatch(str, pattern) do
+        table.insert(list, value)
+    end
+    return list
 end
-local expire_time = tonumber(args["expire_time"])
-local loop_count = tonumber(args["loop_count"])
-local status = args["status"]
-if expire_time > 0 and loop_count > 0 then
 
-    expire_time = expire_time - 30
-    args["expire_time"] = tostring(expire_time)
+local time = os.time()
+local c_week = tostring(tonumber(os.date("%w", time)))
+local c_month = tostring(tonumber(os.date("%m", time)))
+local c_day = tostring(tonumber(os.date("%d", time)))
+local c_hour = tostring(tonumber(os.date("%H", time)))
+local c_minutes = tostring(tonumber(os.date("%M", time)))
 
-elseif expire_time > -100 and loop_count > 0 then
+local trigger = 
+{false, false, false, false }
+--week   month  day    hour   minutes
 
+local week = split_str(args["week"],",")
+local day = split_str(args["day"],",")
+local hour = split_str(args["hour"],",")
+local minutes = split_str(args["minutes"],",")
+               
+function is_trigger(list, c, index)
+    for i=1,#list do
+        if c == list[i] or list[i] == "" then
+           trigger[index] = true
+        end
+    end
+end
+
+is_trigger(week, c_week, 1)
+is_trigger(day, c_day, 2)
+is_trigger(hour, c_hour, 3)
+is_trigger(minutes, c_minutes, 4)
+
+print(trigger[1],trigger[2],trigger[3],trigger[4])
+if trigger[1] and trigger[2] and trigger[3] and trigger[4]  then
+    
     ff:post({
         status = args["status"]
     })
 
-    loop_count = loop_count - 1
-    args["expire_time"] = args["origin_expire_time"]
-    args["loop_count"] = tostring(loop_count)
-
-    if loop_count == 0 then
-        args["origin_expire_time"] = nil
-        args["enable"] = "false"
-    end
-
+    db:apns({
+        user_id = args["user_id"],
+        content = args["status"]
+    })
 
 end
