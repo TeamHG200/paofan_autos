@@ -1,0 +1,12 @@
+{
+    "name" : "翻译君",
+    "author" : "captain",
+    "desc" : "带上trans标记的消息会自动翻译",
+    "icon" : "icon.png",
+    "script" : "translate.main",
+    "script_path" : "main.lua",
+    "script_id" : "9",
+    "auto" : "translate",
+    "args" : [], 
+    "story" : "你可以在发送消息时带上#trans#的tag\r这个消息被识别后会被翻译并生成一条新的消息发出\r同时原消息会被删除"
+}

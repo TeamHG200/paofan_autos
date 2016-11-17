@@ -52,10 +52,10 @@ function alphabeta(bod, count, deep, alpha, beta)
       return S.score_bod(bod, count),{0,0}
    end
 
-   local best_step = { {0,0} }
    local is_black = (#bod%2==0)
    local final_score = is_black and -S.MAX_SCORE or S.MAX_SCORE
    local dropable = B.generate(bod.index, count)
+   local best_step = { dropable[1] }
 
 
    for i=1,#dropable do

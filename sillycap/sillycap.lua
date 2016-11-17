@@ -6,7 +6,6 @@ P.MAX_DEEP = 3
 
 function capRenjuNext(step)
 
-   print(step[1])
    local bod = {}
    for i=1,#step do
       local x = string.sub(step[i],2,2)

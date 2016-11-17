@@ -4,8 +4,8 @@ local SCORE_META = {
     ["H5"] = MAX_SCORE,
     ["D5"] = MAX_SCORE,
     ["H4"] = 10000000,
-    ["D4"] = 10000,
-    ["H3"] = 10000,
+    ["D4"] = 100000,
+    ["H3"] = 50000,
     ["D3"] = 1000,
     ["H2"] = 1000,
     ["D2"] = 100,
@@ -33,7 +33,15 @@ function score_flat(line)
         elseif line[i] == 0 then
             if combo > 0 then
                 if combo > 5 then combo = 5 end
-                table.insert(score, dh..tostring(combo))
+
+                if combo == 2 and score[#score] == "H1" then
+                    score[#score] = dh.."3"
+                elseif combo == 1 and score[#score] == "H2" then
+                    score[#score] = dh.."3"
+                else
+                    table.insert(score, dh..tostring(combo))
+                end
+
                 combo = 0
             end
             dh = "H"

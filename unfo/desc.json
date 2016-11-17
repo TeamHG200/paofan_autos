@@ -1,0 +1,12 @@
+{
+    "name" : "臭臭",
+    "auto" : "unfo",
+    "author" : "captain",
+    "desc" : "有人取消关注你时会提醒",
+    "icon" : "icon.png",
+    "script" : "unfo.main",
+    "script_id" : "8",
+    "script_path" : "main.lua",
+    "args" : [], 
+    "story" : "每5分钟检测最近的登陆的150个追随用户 \r 同时会收到来自PaoFan的私信提醒 \r 关闭接受陌生人私信会收不到私信提醒 \r 「亮剑吧，我们不再是朋友了」"
+}
