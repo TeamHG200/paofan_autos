@@ -1,0 +1,12 @@
+{
+    "name" : "算术君",
+    "author" : "captain",
+    "desc" : "带上cal标记的消息会自动计算结果",
+    "icon" : "icon.png",
+    "script" : "cal.main",
+    "script_path" : "main.lua",
+    "script_id" : "10",
+    "auto" : "cal",
+    "args" : [], 
+    "story" : "你可以在发送消息时带上#cal#的tag\r这个消息可以是一个四则表达式\r被识别后会被计算同时原消息会被删除"
+}
