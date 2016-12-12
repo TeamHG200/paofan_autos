@@ -113,6 +113,7 @@ else
     local r = ff:timeline({
         user_id = target_user
     })
+    print(r)
     local res = json.decode(r)
     local name = res[1]["user"]["name"]
 

@@ -43,7 +43,7 @@ print(trigger[1],trigger[2],trigger[3],trigger[4])
 if trigger[1] and trigger[2] and trigger[3] and trigger[4]  then
     
     ff:post({
-        status = args["status"]
+        status = "#泡饭瓦力机器人#\r"..args["status"]
     })
 
     db:apns({

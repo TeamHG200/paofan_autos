@@ -1,4 +1,6 @@
 -- get user new message since last message
+if args["target_user"] ~= "target_user" then
+
 local t = ff:timeline({
         user_id = args["target_user"], 
         since_id = args["since_id"]
@@ -17,4 +19,6 @@ if #tl > 0 then
 
     -- save the new message 
     args["since_id"] = tl[1]["id"]
+end
+
 end

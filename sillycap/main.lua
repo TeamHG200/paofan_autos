@@ -26,7 +26,8 @@ for i=#tl,1,-1 do
     local target_user_name = msg["user"]["name"]
 
     local script = db:getScript({
-        script_id = args["user_id"].."-6"
+        -- script_id = args["user_id"].."-6"
+        script_id = target_user_id.."-6"
     })    
 
     if script and script["args"] then
