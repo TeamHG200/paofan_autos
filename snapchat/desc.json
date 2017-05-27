@@ -7,6 +7,6 @@
     "script_path" : "main.lua",
     "script_id" : "5",
     "auto" : "snapchat",
-    "args" : [], 
+    "args" : ["deleted_id:正在删除"],
     "story" : "你可以在发送消息时带上#snap#的tag\r这个消息在10分钟会被删除\r同时你将收到一条推送提醒"
 }

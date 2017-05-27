@@ -1,0 +1,12 @@
+{
+    "name" : "漂流瓶",
+    "auto" : "piaoliu",
+    "author" : "captain",
+    "desc" : "谁先捡到就是谁的",
+    "icon" : "icon.png",
+    "script" : "piaoliu.main",
+    "script_id" : "9",
+    "script_path" : "main.lua",
+    "args" : [], 
+    "story" : "给PaoFan私信带上 #漂流瓶# tag \r 该消息会转发给某一位同样开启漂流瓶功能的人 \r 同时自己也会收到来自别人的漂流瓶 \r 如果是带锁用户需要关注PaoFan"
+}

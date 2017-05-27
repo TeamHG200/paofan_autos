@@ -15,9 +15,11 @@ if #tl > 0 then
             end
 
             local exp = tonumber(args[id])
+            local deleted_ids = {}
             if exp > 0 then
                 exp = exp - 30
                 args[id] = tostring(exp)
+                table.insert(deleted_ids, id.."(剩余"..tostring(exp).."秒)")
             else
                 args[id] = nil
                 ff:del({
@@ -28,6 +30,7 @@ if #tl > 0 then
                     content = "已删除:" .. tl[i]["text"]
                 })
             end    
+            args['deleted_id'] = table.concat(deleted_ids, ",")
         end
     end
 end

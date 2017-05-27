@@ -7,6 +7,6 @@
     "script_path" : "main.lua",
     "script_id" : "2",
     "auto" : "dabenzhong",
-    "args" : ["status:钟声"],
-    "story" : "用户可以输入钟声，比如guang，bong什么的"
+    "args" : ["status:自定义输出"],
+    "story" : "ex: 北京时间%s点整；主人%s点了"
 }
