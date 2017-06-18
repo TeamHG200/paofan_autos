@@ -23,7 +23,7 @@ local clock = {
 
 if time ~= count then
     local str = "#泡饭大笨钟#\r"
-    str = str..clock[time%12]
+    str = str..clock[time%12+1]
     str = str..string.format(status,time)
     ff:post({ status = str })
     args["local_time"] =  tostring(time)

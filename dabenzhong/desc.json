@@ -7,6 +7,6 @@
     "script_path" : "main.lua",
     "script_id" : "2",
     "auto" : "dabenzhong",
-    "args" : ["status:自定义输出"],
+    "args" : ["status:自定义"],
     "story" : "ex: 北京时间%s点整；主人%s点了"
 }
