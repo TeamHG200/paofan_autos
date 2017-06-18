@@ -19,8 +19,7 @@ if #tl > 0 then
         if string.find(status["text"], "晚安") == 1
         and status["user"]["id"] ~= args["user_id"] then
             ff:post({
-                status = "@"..status["user"]["name"]..reply(math.random(4)),
-                status = status + "\n#泡饭关爱机器人#"
+                status = "@"..status["user"]["name"].." "..reply[math.random(4)] .. "\n#泡饭关爱机器人#",
                 reply_id = status["id"]
             })
         end
