@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">PaoFan Log</h1>
+
+<h2 id="toc_1">1.7.3</h2>
+
+<ol>
+<li>全新的加密功能，支持TouchID密码指纹锁</li>
+<li>全新的滤镜功能，支持8种INS风格滤镜</li>
+<li>全新15种主题颜色，后续还可以动态扩展更多颜色模式</li>
+<li> 全新的分享功能，可以在任何其他app通过泡饭发布消息（只支持饭否发送功能）</li>
+<li>自动的网络切换，蜂窝网络自动切换为小图模式，而在wifi下换成大图模式</li>
+<li>升级了的备注功能，如果设置了备注，可以在任何页面点击用户名称展现备注</li>
+<li>又对UI进行了改进，发送按钮修改至底部等很多处细节上的调整 </li>
+<li>性能优化以及界面细节优化，大幅加速启动速度</li>
+</ol>
+
+<h2 id="toc_2">1.7.2</h2>
+
+<ol>
+<li>修复推送问题</li>
+</ol>
+
+<h2 id="toc_3">1.7.1</h2>
+
+<ol>
+<li>修复4英寸适配问题</li>
+</ol>
+
+<h2 id="toc_4">1.7.0</h2>
+
+<ol>
+<li>泡饭对界面修改做了大胆的尝试，重新设计了的发送界面与用户界面，对很多UI进行了细微的调整</li>
+<li>现在支持同时发送消息到多个账号，甚至包括Weibo和Twitter，简直不可思议</li>
+<li>在消息详情页面轻点时间可以查看具体发送时间，真是恰到好处</li>
+<li>支持长图的自动无缝拼接，卡酷咿です</li>
+<li>消息与关注列表都支持3DTouch了，让转发更便捷，访问更自然</li>
+<li>某人最爱的私信对话页面也可以删除啦</li>
+</ol>
+
+<h2 id="toc_5">1.6.0</h2>
+
+<ol>
+<li>全新的屏蔽功能</li>
+<li>优化后的图标和背景</li>
+</ol>
+
+<h2 id="toc_6">1.5.6~1.5.7</h2>
+
+<ol>
+<li>支持备忘模式</li>
+</ol>
+
+<h2 id="toc_7">1.5.5</h2>
+
+<ol>
+<li>支持3Dtouch，现在在首页可以快速的发布消息和搜索消息了</li>
+<li>修复weibo和twitter页面查看“追随”闪退问题</li>
+<li>修复weibo回复出错问题</li>
+<li>个人主页可以拷贝域名</li>
+<li>现在新消息发送成功后将会以大图方式展现，而不是小图</li>
+<li>删除账号以及清理消息增加确认提示</li>
+</ol>
+
+<h4 id="toc_8">PaoFanAutos 泡饭机器人正式启动，机器人是运行在泡饭服务器上的一段特定程序，可以管理维护用户自己的时间线，比如某人发消息时提醒自己，设置定时发送消息，以及阅后即焚功能等</h4>
+
+<ol>
+<li>狗蛋： 目标用户有新消息时会获得推送</li>
+<li>大本钟：让自己也成为大本钟</li>
+<li>五子棋：让tl变成五子棋战场</li>
+<li>小鲸鱼：对说晚安的人说晚安</li>
+<li>白茫茫：带有snap标记的10分钟后会被删除</li>
+<li>瓦力：可以定时发送消息</li>
+<li>臭臭：有人取消关注你时会收到推送</li>
+<li>翻译君：带上trans标记的消息会被自动翻译</li>
+</ol>
+
+<h2 id="toc_9">1.5.4</h2>
+
+<ol>
+<li>修复推送失败问题</li>
+<li>修复视频转GIF重复问题</li>
+</ol>
+
+<h2 id="toc_10">1.5.3</h2>
+
+<ol>
+<li>修复ip7/7p 闪退问题</li>
+<li>修复ios10登陆twitter和weibo闪退问题</li>
+</ol>
+
+<h2 id="toc_11">1.5.2</h2>
+
+<ol>
+<li>修复微博发送中文会闪退的问题</li>
+<li>微博页面去除私信TAB</li>
+</ol>
+
+<h2 id="toc_12">1.5.1</h2>
+
+<ol>
+<li>修复不支持IPhone5/5C的问题</li>
+<li>底部多用户可以长按图标拖动调整顺序了</li>
+<li>地图性能得到大幅优化，不会再出现OOM问题</li>
+<li>增加静音选项</li>
+<li>陌生人不再是红色配色，而是没有被选中的蓝色</li>
+<li>去除了开机动画效果，启动速度更快了</li>
+</ol>
+
+<h2 id="toc_13">1.5.0</h2>
+
+<ol>
+<li>泡饭支持Weibo，由于新浪授权机制，功能受限在浏览自己的时间线和发送消息图片</li>
+<li>支持底部tab手势，向右划可以快速新建消息</li>
+<li>自动刷新按钮从设置移动到主页的右上角，在顶部时点击可以开启刷新功能</li>
+<li>GIF动图升级为多图模式并更新新图标，多图模式下可以生成GIF动图或者拼长图</li>
+<li>发送界面得到了优化</li>
+</ol>
+
+<h5 id="toc_14">Weibo</h5>
+
+<ol>
+<li>微博由于API权限收紧策略，导致功能不完善</li>
+<li>无法查看他人的时间线</li>
+<li>无法查看他人的关注，收藏</li>
+<li>无法搜索话题</li>
+<li>提到我的指在原文中@我，评论我的指在评论中@我</li>
+<li>一些高级接口依赖使用人数才可以申请，后续会慢慢开放</li>
+</ol>
+
+<h2 id="toc_15">1.4.0</h2>
+
+<ol>
+<li>泡饭支持Twitter，支持代理模式</li>
+<li>支持图片上传比率调整</li>
+<li>字体大小可以在系统中控制</li>
+<li>支持转发除重</li>
+<li>可以一键清除所有消息</li>
+</ol>
+
+<h5 id="toc_16">Twitter</h5>
+
+<ol>
+<li>支持推特，登录时请用VPN</li>
+<li>私信页面不支持对话列表，只有收件箱和发件箱</li>
+<li>不支持“随便看看”，替换为“附近消息”</li>
+<li>不支持查看消息对话上下文，替换为retweet列表</li>
+<li>twitter设置页面裁剪，增加代理设置，不支持请求关注，黑名单以及推送</li>
+</ol>
+
+<h2 id="toc_17">1.3.0</h2>
+
+<ol>
+<li>全新的个人备忘模式功能</li>
+<li>样式设置增加 ‘加粗字体’ 和 ‘调整间距’ 的设置</li>
+<li>发送窗口支持 ’长文’ 功能，点击后会把当前的文字转成图片</li>
+<li>根据图片大小自适应布局（小于100K的小图或者长宽比大于3的长图会用正方形显示在侧面）</li>
+<li>修复私信顶部的bug，修复一个导致闪退的问题</li>
+<li>增加所有二级界面的返回按钮，顶部多个Tab的页面可以直接滑动顶部输入框切换</li>
+<li>消息详情页图片显示更大，更好用了</li>
+<li>设置页面的图表美化</li>
+<li>大图模式默认不使用原图</li>
+<li>点击地图框跳转到地图应用</li>
+<li>支持ping to top</li>
+</ol>
+
+<h5 id="toc_18">备忘模式</h5>
+
+<ol>
+<li>通过输入”$”前缀来快速开启备忘视图</li>
+<li>图表模式的格式为 “$标题 单位”，然后换行输入每一栏的消息”内容 数字”</li>
+<li>点击进入消息后，会自动搜索当前图表的历史纪录，以图表方式展现</li>
+<li>第二栏不是数字会被解析为0，在图表中不会展现</li>
+<li>可以通过点击子标题来展现具体每一个纪录的走势</li>
+<li>可以在设置中配置自己常用的图标格式</li>
+</ol>
+
+<h2 id="toc_19">1.2.0 ( rebuild )</h2>
+
+<ul>
+<li>重新实现的异步渲染机制，使得流畅度获得了前所未有的飞跃，即使在快速的滑动中也感受不到丝毫的卡顿</li>
+<li>重新实现了每一个界面，删去了看似酷炫但其实毫无卵用的功能，还原IOS最让人习惯的手势以及功能</li>
+<li>重新设计了页面布局，使用最新的苹方字体，调整后的字体大小间距，以及转发消息的聚合等，让整个TL看上去更清爽</li>
+<li>重新定制了第三方插件，使得性能更高效</li>
+<li>私信可以显示我发出的和我收到的，同时支持删除。“提到我的”增加了只看回复的区分</li>
+<li>支持互Fo检测，可以在关注或追随列表里显示对方是否关注自己</li>
+<li>支持定位，以及定位的展示</li>
+<li><p>支持草稿箱</p></li>
+</ul>
+
+<ol>
+<li>Message 页面 (cool)</li>
+<li>timeline 支持增量更新 (cool)</li>
+<li>Public 页面 － 随便看看，热词 (cool)</li>
+<li>搜索页面 － 点击tag进入搜索或者顶部点击搜索 （done）</li>
+<li>拉黑设置(cool)</li>
+<li>关注请求设置(cool)</li>
+<li>互fo检测 (cool)</li>
+<li>长按消息可直接转发 (cool)</li>
+<li>支持草稿 (cool)</li>
+<li>支持位置显示(cool)</li>
+<li>个人资料设置，推送，屏蔽，清理设置一体化</li>
+</ol>
+
+<h4 id="toc_20">1.2.0 (61)</h4>
+
+<ol>
+<li>随便看看转发左上出现重叠(done)</li>
+<li>网页链接转发丢失(done)</li>
+<li>红点布局问题(done)</li>
+<li>批量回复 (done)</li>
+<li>动图图片显示不正确问题，默认不滚动到底部 （done）</li>
+<li>热词顺序问题，默认展现最近的四条热词 (done)</li>
+<li>双击Tab会闪退的问题(done) </li>
+</ol>
+
+<h4 id="toc_21">1.2.0 (62)</h4>
+
+<ol>
+<li>依然是左上角的问题</li>
+<li>增加长按的快捷操作，支持长按直接转发，新建消息，收藏消息，或者什么都不做</li>
+</ol>
+
+<h2 id="toc_22">1.1.19</h2>
+
+<ol>
+<li>全新设计了发送消息页面，very apple</li>
+<li>增加了分割线，调整了颜色和字体，更好看了？</li>
+<li>底部状态栏支持可以查看网络实时发送接受的状态与进度</li>
+</ol>
+
+<h4 id="toc_23">1.1.19 (36)</h4>
+
+<ol>
+<li>全新设计了公共页面，热词，推荐，机器人等展现统一了，可支持定制化</li>
+<li>发送界面更强大了，支持只能匹配用户，可以左右移动光标</li>
+<li>下拉发消息的幅度更大了（感谢@Ryuuku 的建议</li>
+<li>全面取消左划收藏，收藏现在移动到长按了</li>
+<li>用户详情页面点开后，左划可以关闭 （感谢巨屏手机@麻利 的提议</li>
+</ol>
+
+<h4 id="toc_24">1.1.19 (37)</h4>
+
+<ol>
+<li>全新设计了用户详情页面，详情页面支持私信</li>
+<li>全新设置界面</li>
+<li>全新个人信息修改界面</li>
+<li>图片打开默认选用原图，点击大图时会慢，但是回更清晰</li>
+<li>图片界面放大后消息消失</li>
+<li>原Po点击可打开图片</li>
+<li>私信逆向显示</li>
+<li>用户详情显示是否互相关注</li>
+</ol>
+
+<h4 id="toc_25">1.1.19（42）</h4>
+
+<ol>
+<li>全新的推送功能，支持私信和回复的推送，让你我推了又推</li>
+<li>动图功能，可以让多张静态图片组成一张动态图，发挥你的想象力吧</li>
+<li>点击顶部现在可以返回顶部了</li>
+<li>界面美化了</li>
+</ol>
+
+<h4 id="toc_26">1.1.19 (46)</h4>
+
+<ol>
+<li>黑名单功能，点击用户头像会出现拉黑或者屏蔽选项</li>
+<li>为了更好的服务人民群众，开发人员购置了一台价格很菲的服务器，推送服务器由美国机房迁移到杭州阿里云机房，所有用户需要重新开启一下推送服务，推送时效性更高</li>
+<li>小红点不再那么难以消除了</li>
+<li>推送设置界面更加好看了，可以选择关闭或开启单个用户的推送</li>
+<li>缓存清理功能会显示缓存占用大小了</li>
+<li>消息界面也可以点击了</li>
+</ol>
+
+<h2 id="toc_27">1.1.18</h2>
+
+<ol>
+<li>修复一个闪退的BUG</li>
+</ol>
+
+<h2 id="toc_28">1.1.17</h2>
+
+<ol>
+<li>头像点击也出用户信息了</li>
+<li>增加取消和关注按钮，再也不会误按了（诶，我刚把谁UN了？</li>
+<li>优化回复或者转发导致黑块或者文字重复的问题，应该（大概）不会再出现了！</li>
+<li>多重回复支持，</li>
+<li>基于智能匹配的自动回复列表获取，总是匹配你最想@的那个人</li>
+<li>关注请求不在显示在右下角，而是详情页，小红点没有了</li>
+<li>个人界面不点击头像也可以出详情</li>
+<li>全新的公共界面，可以自己定义自己感兴趣的人</li>
+</ol>
+
+<h2 id="toc_29">1.1.16</h2>
+
+<ol>
+<li>全新设计了登陆界面</li>
+<li>重新设计了搜索功能，现在的搜索功能显示在个人或者用户消息的下方，而且经过飘红处理</li>
+<li>发送消息立刻返回显示在最顶端</li>
+<li>上划缩小用户页面，放大显示页面，使得界面更美了（才怪吧</li>
+<li>消息框宽度缩小</li>
+</ol>
+
+<h2 id="toc_30">1.1.15</h2>
+
+<ol>
+<li>全新设计了用户切换页面</li>
+</ol>
+
+<h2 id="toc_31">1.1.14</h2>
+
+<ol>
+<li>现在个人详情页面也可以点开消息了</li>
+<li>Tag支持 ＃＃和＃两种</li>
+<li>草稿箱更加智能了，不会在存储无效的英文了（👀</li>
+<li>长按保存图片功能buff，支持AirDrop，支持Share</li>
+<li>减少查询深度，在网络不好的时候会比较快一点</li>
+<li>消息页面的左边多出一个搜索按钮，可以选择发送或者搜索，所有用户适用</li>
+</ol>
+
+<h2 id="toc_32">1.1.13</h2>
+
+<ol>
+<li>增加认证动画界面（又是无意义的）</li>
+<li>图片bug修复，图片两阶段加载，默认使用缩略图（快是硬道理）</li>
+<li>铃声修改，尿急的声音改成提醒，去掉震动，平时刷的时候声音会很温柔（摸摸</li>
+<li>支持非持久化的临时草稿功能（持久化的方案不太好，先非持久化）
+5.字体调大一码，Finally!
+
+<ol>
+<li>App图标显示提醒，对的，就是要逼死你们这些强迫症</li>
+</ol></li>
+</ol>
+
+<h2 id="toc_33">1.1.12</h2>
+
+<ol>
+<li>快速切tab闪退</li>
+<li>私信界面和下部图标颜色调整</li>
+<li>支持点击底部item跳到顶部</li>
+<li>个人页面unfo，fo，拒绝关注请求，接受关注请求有提示</li>
+</ol>
+
+<h2 id="toc_34">1.1.0</h2>
+
+<ol>
+<li>支持饭否</li>
+</ol>
+
+<h2 id="toc_35">1.0.0</h2>
+
+<ol>
+<li>Born In Darkness</li>
+</ol>
+
+<hr>
+
+<h5 id="toc_36">致谢:</h5>
+
+<ol>
+<li>Twitter Api Proxy </li>
+<li>OAuthSwift</li>
+<li>Alamofire</li>
+<li>YYKit</li>
+<li>SnapKit</li>
+<li>SVGKit</li>
+<li>JSQMessages</li>
+</ol>
+
+
+
+
+</body>
+
+</html>
