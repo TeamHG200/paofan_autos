@@ -7,10 +7,11 @@ local tl = json.decode(t)
 
 local reply = {
     "晚安~",
+    "晚安呗",
     "good night >_<",
     "早点休息",
     "盖好被子",
-    "在上个厕所要不",
+    "沉睡吧！蠢货！",
     "好梦"
 }
 
@@ -22,7 +23,7 @@ if #tl > 0 then
         and status["user"]["id"] ~= args["user_id"]
         and status["user"]["id"] ~= 'TestByTse' then
             ff:post({
-                status = "@"..status["user"]["name"].." "..reply[math.random(6)] .. "\n#泡饭晚安机器人#",
+                status = "@"..status["user"]["name"].." "..reply[math.random(#reply)] .. "\n#泡饭晚安机器人#",
                 reply_id = status["id"]
             })
         end

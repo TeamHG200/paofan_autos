@@ -12,15 +12,14 @@ function split_str(str, token)
 end
 
 
-if args["target_user"] ~= "target_user" then
+if args["keyword"] ~= "keyword" and args["keyword"] ~= "" then
 
-    local targets = split_str(args["target_user"], "|")
+    local targets = split_str(args["keyword"], "|")
     local since_ids = split_str(args["since_id"], "|")
 
     for i=1,#targets do
 
-        local t = ff:timeline({
-                  user_id = targets[i], 
+        local t = ff:home({
                   since_id = since_ids[i] or ""
                   })
 
@@ -29,20 +28,15 @@ if args["target_user"] ~= "target_user" then
         -- if user has new message
         if #tl > 0 then
 
-            local has_photo = tl[1]["photo"] == nil
-
-            if has_photo then
-                content = "狗蛋[" .. targets[i] .. "]:(图片)" .. tl[1]["text"]
-            else
-                "狗蛋[" .. targets[i] .. "]:" .. tl[1]["text"]
-            end
-
+            if string.find(tl[1]["text"], targets[i]) ~= nil then
+            
             -- send a push to self
-            db:apns({
-            user_id = args["user_id"], 
-            content = content
-            })
+                db:apns({
+                  user_id = args["user_id"], 
+                  content = "里亚尔[" .. targets[i] .. "]:" .. tl[1]["text"]
+                })
 
+            end 
             -- save the new message 
             since_ids[i] = tl[1]["id"]
 

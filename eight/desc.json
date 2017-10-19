@@ -1,0 +1,12 @@
+{
+    "name" : "八个里亚尔",
+    "auto" : "eight",
+    "author" : "captain",
+    "desc" : "TL上有指定关键词时发送一个提醒",
+    "icon" : "icon.png",
+    "script" : "eight.main",
+    "script_id" : "11",
+    "script_path" : "main.lua",
+    "args" : ["keyword:关键词"], 
+    "story" : "keyword 为关键词  \r 「谨以此纪念小猫'八个·里亚尔'」"
+}
