@@ -34,7 +34,7 @@ if args["target_user"] ~= "target_user" then
             if has_photo then
                 content = "狗蛋[" .. targets[i] .. "]:(图片)" .. tl[1]["text"]
             else
-                "狗蛋[" .. targets[i] .. "]:" .. tl[1]["text"]
+                content = "狗蛋[" .. targets[i] .. "]:" .. tl[1]["text"]
             end
 
             -- send a push to self
